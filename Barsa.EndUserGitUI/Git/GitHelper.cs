@@ -15,6 +15,13 @@ namespace Barsa.EndUserGitUI.Git
             return Execute(repositoryPath, "init");
         }
 
+
+        public static string Fuck()
+        {
+            return "fuck";
+        }
+
+
         public static bool IsRepository(string repositoryPath)
         {
             if (string.IsNullOrWhiteSpace(repositoryPath)) return false;

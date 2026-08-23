@@ -146,6 +146,9 @@ namespace Barsa.EndUserGitUI
                 txtLogs.AppendText(sb.ToString());
                 string message = GitDatabase.SuggestCommitMessage(_repositoryPath);
                 txtCommitMessage.Text = message;
+
+
+
             }
             catch (Exception ex)
             {
@@ -283,11 +286,25 @@ namespace Barsa.EndUserGitUI
             btnCommit.Enabled = !busy && _connected;
             btnLog.Enabled = !busy && _connected;
             btnConnect.Enabled = !busy && !_connected;
+
+
+            btnCommit.Enabled = !(txtCommitMessage.Text == "بدون تغییر");
+
         }
 
         private static DialogResult ShowMessage(string message, string title, MessageBoxButtons buttons, MessageBoxIcon icon)
         {
             return MessageBox.Show(message, title, buttons, icon);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtLogs.Clear();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            new GitStatusFRM(txtRepositoryPath.Text, txtConnectionString.Text).ShowDialog();
         }
     }
 }

@@ -53,6 +53,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -63,6 +67,8 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtConnectionString
@@ -160,7 +166,7 @@
             this.txtCommitMessage.Multiline = true;
             this.txtCommitMessage.Name = "txtCommitMessage";
             this.txtCommitMessage.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtCommitMessage.Size = new System.Drawing.Size(537, 172);
+            this.txtCommitMessage.Size = new System.Drawing.Size(537, 165);
             this.txtCommitMessage.TabIndex = 7;
             this.txtCommitMessage.WordWrap = false;
             // 
@@ -171,7 +177,7 @@
             this.btnCommit.ForeColor = System.Drawing.Color.Black;
             this.btnCommit.Image = ((System.Drawing.Image)(resources.GetObject("btnCommit.Image")));
             this.btnCommit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCommit.Location = new System.Drawing.Point(335, 592);
+            this.btnCommit.Location = new System.Drawing.Point(335, 583);
             this.btnCommit.Name = "btnCommit";
             this.btnCommit.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnCommit.Size = new System.Drawing.Size(258, 34);
@@ -182,10 +188,10 @@
             // 
             // btnLog
             // 
-            this.btnLog.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnLog.Location = new System.Drawing.Point(3, 493);
+            this.btnLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLog.Location = new System.Drawing.Point(133, 0);
             this.btnLog.Name = "btnLog";
-            this.btnLog.Size = new System.Drawing.Size(576, 31);
+            this.btnLog.Size = new System.Drawing.Size(443, 36);
             this.btnLog.TabIndex = 9;
             this.btnLog.Text = "لاگ";
             this.btnLog.UseVisualStyleBackColor = true;
@@ -201,6 +207,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox1
             // 
@@ -266,17 +273,17 @@
             this.txtLogs.Name = "txtLogs";
             this.txtLogs.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtLogs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLogs.Size = new System.Drawing.Size(576, 474);
+            this.txtLogs.Size = new System.Drawing.Size(576, 442);
             this.txtLogs.TabIndex = 14;
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(1132, 94);
+            this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 22);
+            this.button1.Size = new System.Drawing.Size(58, 36);
             this.button1.TabIndex = 16;
             this.button1.Text = "R | L";
             this.button1.UseVisualStyleBackColor = false;
@@ -314,10 +321,10 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(742, -5);
+            this.pictureBox6.Location = new System.Drawing.Point(1107, -2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(106, 93);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -334,7 +341,7 @@
             this.groupBox2.Controls.Add(this.pictureBox5);
             this.groupBox2.Location = new System.Drawing.Point(12, 373);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(591, 228);
+            this.groupBox2.Size = new System.Drawing.Size(591, 221);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "کامیت تغییرات";
@@ -356,20 +363,60 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.Controls.Add(this.txtLogs);
-            this.groupBox3.Controls.Add(this.btnLog);
-            this.groupBox3.Location = new System.Drawing.Point(619, 99);
+            this.groupBox3.Controls.Add(this.panel1);
+            this.groupBox3.Location = new System.Drawing.Point(619, 111);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(582, 527);
+            this.groupBox3.Size = new System.Drawing.Size(582, 500);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "لاگ های سیستمی:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnLog);
+            this.panel1.Controls.Add(this.btnClear);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(3, 461);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(576, 36);
+            this.panel1.TabIndex = 15;
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.MistyRose;
+            this.btnClear.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnClear.Location = new System.Drawing.Point(58, 0);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 36);
+            this.btnClear.TabIndex = 17;
+            this.btnClear.Text = "پاکسازی";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 624);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1213, 26);
+            this.statusStrip1.TabIndex = 25;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(83, 20);
+            this.toolStripStatusLabel1.Text = "Version: 0.1";
             // 
             // MainFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1213, 650);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnCommit);
             this.Controls.Add(this.groupBox2);
@@ -381,6 +428,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainFRM";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
@@ -399,6 +447,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -430,6 +481,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
